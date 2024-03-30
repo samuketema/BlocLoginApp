@@ -1,19 +1,15 @@
-import 'dart:html';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
-class LoginApp extends StatelessWidget{
+class LoginApp extends StatelessWidget {
   Widget build(context){
     return Container(
-      marign:EdgeInsets.all(25.0),
+      margin:EdgeInsets.all(20.0),
       child: Column(
         children: [
-          email();
-          password();
-          submitButton();
+          // email(),
+          // password(), 
+          // submitButton()
         ],),
     );
   }
@@ -32,7 +28,7 @@ class LoginApp extends StatelessWidget{
       obscureText: true,
       decoration:InputDecoration(
         hintText: 'Password',
-        label:'password'
+        labelText:'password'
       )
       
 
@@ -41,7 +37,7 @@ class LoginApp extends StatelessWidget{
   Widget submitButton(){
     return ElevatedButton(
       onPressed:(){},
-       child: const Text('Submit'),
+       child:  Text('Submit'),
        style: ElevatedButton.styleFrom(
        foregroundColor: Colors.white,
        backgroundColor: Color.fromARGB(255, 142, 3, 3)
