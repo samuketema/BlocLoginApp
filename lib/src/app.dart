@@ -4,9 +4,9 @@
  class App extends StatelessWidget {
 
   @override
-  Widget build(BuildContext context) {
+ build(BuildContext context) {
     return MaterialApp(
-      title: 'Bloc login App'
+      title: 'Bloc login App',
       home:Scaffold(
         body: LoginApp(),
        )
