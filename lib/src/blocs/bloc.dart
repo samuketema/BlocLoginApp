@@ -1,18 +1,21 @@
 
-import 'dart:async'
-void main(){
-
-}
+import 'dart:async';
+import 'validators.dart';
 
 
-class Bloc exteds StatelessWidget{
+class Bloc extends Object with Validator {
   
   final _email =  StreamController<String>();
   final _password = StreamController<String>();
 
-  Stream<String> get changeEmail => _email.stream;
-  stream<string> get changePassword => _password.stream;
+  Stream<String> get email => _email.stream.transform(validateEmail);
+  Stream<String> get password => _password.stream.transform(validatePassword);
 
-  Function(String) get email => _email.sink.add();
-  Function(String) get password => _password.sink.add();
+  Function(String) get changeEmail => _email.sink.add;
+  Function(String) get changePassword => _password.sink.add;
+
+ dispose () {
+  _email.close();
+  _password.close();
+}
 }
