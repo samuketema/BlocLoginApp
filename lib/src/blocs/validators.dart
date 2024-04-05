@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:js_interop';
+
 
 mixin Validator {
   final validateEmail = StreamTransformer<String,String>.fromHandlers(
