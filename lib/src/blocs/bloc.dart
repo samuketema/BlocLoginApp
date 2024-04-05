@@ -5,6 +5,7 @@ import 'validators.dart';
 
 class Bloc extends Object with Validator {
   
+  
   final _email =  StreamController<String>();
   final _password = StreamController<String>();
 
@@ -19,3 +20,4 @@ class Bloc extends Object with Validator {
   _password.close();
 }
 }
+final bloc = Bloc();
