@@ -2,7 +2,8 @@
 import 'dart:async';
 import 'validators.dart';
 
-
+///Blooc class uses StreamController to manage the state of the email and 
+///password fields.
 class Bloc extends Object with Validator {
   
   

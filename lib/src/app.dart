@@ -5,6 +5,8 @@
  class App extends StatelessWidget {
 
   @override
+  ///build method that returns a new widget tree that can incorporate pices of the
+  ///old widget tree(a provider that contains MaterialApp)
  build(BuildContext context) {
     return Provider(
       
