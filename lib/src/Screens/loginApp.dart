@@ -14,7 +14,7 @@ class LoginApp extends StatelessWidget {
         children: [
            email( bloc),
            password(bloc), 
-           submitButton()
+           submitButton( bloc)
         ],),
     );
   }
@@ -50,13 +50,20 @@ class LoginApp extends StatelessWidget {
     );
     },) ;
   }
-  Widget submitButton(){
-    return ElevatedButton(
-      onPressed:(){},
+  Widget submitButton(Bloc bloc){
+    return StreamBuilder(
+      stream:bloc.submitValid ,
+      builder: (context, snapshot) {
+        return ElevatedButton(
+      onPressed:(snapshot.hasData)?  bloc.submit : null,
        child:  Text('Submit'),
        style: ElevatedButton.styleFrom(
        foregroundColor: Colors.white,
        backgroundColor: Color.fromARGB(255, 142, 3, 3)
-       ),);
+       ),
+      );
+      }
+       ,);
+    
   }
 }
